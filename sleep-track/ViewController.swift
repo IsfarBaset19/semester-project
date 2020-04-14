@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     let healthStore = HKHealthStore()
   
     @IBOutlet var displayTimeLabel: UILabel!
+    @IBOutlet weak var sleepStatusLabel: UILabel!
+    @IBOutlet weak var moonStart: UIImageView!
+    @IBOutlet weak var moonStop: UIImageView!
     
     var startTime = TimeInterval()
     var timer:Timer = Timer()
@@ -41,6 +44,37 @@ class ViewController: UIViewController {
                 NSLog("Display not allowed")
             }
        }
+        
+        //allows you to click the moon to start
+        let moonStartTap = UITapGestureRecognizer(target: self, action: #selector(moonStartTapFunction))
+        moonStart.isUserInteractionEnabled = true
+        moonStart.addGestureRecognizer(moonStartTap)
+        
+        //allows you to click the moon to stop
+        let moonStopTap = UITapGestureRecognizer(target: self, action: #selector(moonStopTapFunction))
+        moonStop.isUserInteractionEnabled = true
+        moonStop.addGestureRecognizer(moonStopTap)
+    }
+    
+    @IBAction func moonStartTapFunction(sender: UITapGestureRecognizer) {
+        alarmTime = NSDate()
+        if (!timer.isValid) {
+            let aSelector : Selector = #selector(ViewController.updateTime)
+            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+            startTime = NSDate.timeIntervalSinceReferenceDate
+          }
+        moonStart.isHidden = true;
+        moonStop.isHidden = false;
+    }
+    
+    
+    @IBAction func moonStopTapFunction(sender: UITapGestureRecognizer) {
+        endTime = NSDate()
+        self.saveSleepAnalysis()
+        self.retrieveSleepAnalysis()
+        timer.invalidate()
+        moonStart.isHidden = false;
+        moonStop.isHidden = true;
     }
     
     

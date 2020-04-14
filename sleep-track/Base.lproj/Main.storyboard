@@ -18,21 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raD-y0-j0C">
-                                <rect key="frame" x="231" y="151" width="138" height="152"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raD-y0-j0C">
+                                <rect key="frame" x="138" y="391" width="138" height="152"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="138" id="emQ-7E-mma"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYY-W5-6TC">
-                                <rect key="frame" x="353" y="819" width="46" height="30"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYY-W5-6TC">
+                                <rect key="frame" x="348" y="819" width="46" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="Lfm-Eq-PSa"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
                                 <state key="normal" title="Stop">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,12 +41,12 @@
                                     <action selector="stopWithSender:" destination="HXr-Xb-4mF" eventType="touchUpInside" id="EqU-fg-a34"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDf-7X-Fao">
-                                <rect key="frame" x="20" y="819" width="46" height="30"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDf-7X-Fao">
+                                <rect key="frame" x="71" y="787" width="92" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="lEi-Ll-8gj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -55,25 +55,56 @@
                                     <action selector="startWithSender:" destination="HXr-Xb-4mF" eventType="touchUpInside" id="d6o-dp-7yp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtA-Bw-ZcD">
+                                <rect key="frame" x="323" y="44" width="71" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKb-yI-U0N">
+                                <rect key="frame" x="13" y="44" width="107" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Open Health">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You Slept Well!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WlD-T8-wpz" userLabel="SleepStatusLabel">
+                                <rect key="frame" x="43" y="313" width="328" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="52"/>
+                                <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="moon.zzz" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AET-iX-oZi" userLabel="MoonStart">
+                                <rect key="frame" x="133" y="638.5" width="148" height="148"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="moon.zzz.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MwF-ch-GtF" userLabel="MoonStop">
+                                <rect key="frame" x="133" y="638" width="148" height="148"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.19760814309120178" green="0.91406774520874023" blue="0.89669734239578247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="yLw-KY-bED" firstAttribute="top" secondItem="wDf-7X-Fao" secondAttribute="bottom" constant="13" id="2z8-GR-Euo"/>
-                            <constraint firstItem="raD-y0-j0C" firstAttribute="top" secondItem="N9R-64-32r" secondAttribute="bottom" constant="131" id="NEe-u9-0ML"/>
-                            <constraint firstItem="wYY-W5-6TC" firstAttribute="baseline" secondItem="wDf-7X-Fao" secondAttribute="baseline" id="YXy-at-u8H"/>
-                            <constraint firstItem="wDf-7X-Fao" firstAttribute="leading" secondItem="N8X-WR-6uQ" secondAttribute="leading" constant="20" symbolic="YES" id="a7c-cB-htl"/>
-                            <constraint firstAttribute="trailing" secondItem="wYY-W5-6TC" secondAttribute="trailing" constant="15" id="nuk-71-BEs"/>
-                            <constraint firstItem="yLw-KY-bED" firstAttribute="top" secondItem="raD-y0-j0C" secondAttribute="bottom" constant="297" id="s9l-tT-eiA"/>
-                            <constraint firstItem="raD-y0-j0C" firstAttribute="centerX" secondItem="N8X-WR-6uQ" secondAttribute="centerX" id="t06-AK-DDb"/>
-                        </constraints>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
                         <outlet property="displayTimeLabel" destination="raD-y0-j0C" id="dX0-YZ-xdo"/>
+                        <outlet property="moonStart" destination="AET-iX-oZi" id="4cV-Ak-6KE"/>
+                        <outlet property="moonStop" destination="MwF-ch-GtF" id="VIg-O5-JO0"/>
+                        <outlet property="sleepStatusLabel" destination="WlD-T8-wpz" id="Alb-pz-Kru"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="150-Ip-7Yf" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="40" y="31"/>
+            <point key="canvasLocation" x="39.130434782608695" y="30.803571428571427"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="moon.zzz" catalog="system" width="118" height="128"/>
+        <image name="moon.zzz.fill" catalog="system" width="116" height="128"/>
+    </resources>
 </document>
