@@ -54,8 +54,13 @@ class ViewController: UIViewController {
         let moonStopTap = UITapGestureRecognizer(target: self, action: #selector(moonStopTapFunction))
         moonStop.isUserInteractionEnabled = true
         moonStop.addGestureRecognizer(moonStopTap)
+        
+        //Set status label
+        sleepStatusLabel.text = "Time to sleep?"
+        sleepStatusLabel.textColor = UIColor.white;
     }
     
+    //starts the timer
     @IBAction func moonStartTapFunction(sender: UITapGestureRecognizer) {
         alarmTime = NSDate()
         if (!timer.isValid) {
@@ -65,9 +70,14 @@ class ViewController: UIViewController {
           }
         moonStart.isHidden = true;
         moonStop.isHidden = false;
+        
+        
+        //Set status label
+        sleepStatusLabel.text = "Sleeping..."
+        sleepStatusLabel.textColor = UIColor.white;
     }
     
-    
+    //stops the timer
     @IBAction func moonStopTapFunction(sender: UITapGestureRecognizer) {
         endTime = NSDate()
         self.saveSleepAnalysis()
@@ -75,26 +85,30 @@ class ViewController: UIViewController {
         timer.invalidate()
         moonStart.isHidden = false;
         moonStop.isHidden = true;
+        
+        //Set status label
+        sleepStatusLabel.text = "You slept well!"
+        sleepStatusLabel.textColor = UIColor.systemGreen;
     }
     
     
-    @IBAction func start(sender: AnyObject) {
-          
-        alarmTime = NSDate()
-        if (!timer.isValid) {
-            let aSelector : Selector = #selector(ViewController.updateTime)
-            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
-            startTime = NSDate.timeIntervalSinceReferenceDate
-          }
-          
-            }
-    
-    @IBAction func stop(sender: AnyObject) {
-         endTime = NSDate()
-         self.saveSleepAnalysis()
-         self.retrieveSleepAnalysis()
-         timer.invalidate()
-     }
+//    @IBAction func start(sender: AnyObject) {
+//
+//        alarmTime = NSDate()
+//        if (!timer.isValid) {
+//            let aSelector : Selector = #selector(ViewController.updateTime)
+//            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+//            startTime = NSDate.timeIntervalSinceReferenceDate
+//          }
+//
+//            }
+//
+//    @IBAction func stop(sender: AnyObject) {
+//         endTime = NSDate()
+//         self.saveSleepAnalysis()
+//         self.retrieveSleepAnalysis()
+//         timer.invalidate()
+//     }
     
     @objc func updateTime() {
         let currentTime = NSDate.timeIntervalSinceReferenceDate
